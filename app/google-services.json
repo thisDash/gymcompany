@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "132844597595",
+    "firebase_url": "https://gym-companion-a70bb.firebaseio.com",
+    "project_id": "gym-companion-a70bb",
+    "storage_bucket": "gym-companion-a70bb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:132844597595:android:879c0be3c1582482396a7e",
+        "android_client_info": {
+          "package_name": "com.example.gymcompanion"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "132844597595-84l1ji2r0d1s2nofkl9oi41ra2giupkh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.gymcompanion",
+            "certificate_hash": "bdbd507ffb82953dde4f7ae74462023e70f8a045"
+          }
+        },
+        {
+          "client_id": "132844597595-ocv6hl4cp7evpk24mqa206pgfjm8r2op.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRE4UFY6-cpEdwQXOhGrD-1KLFZkgGUFA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "132844597595-ocv6hl4cp7evpk24mqa206pgfjm8r2op.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_background">
+
+    <TextView
+        android:id="@+id/your_plans_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="YOUR PLANS"
+        android:textColor="@color/white"
+        android:textSize="@dimen/title"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <Button
+        android:id="@+id/plans_create_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+ Create Plan"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        android:layout_margin="15dp"
+        android:padding="8dp"
+        android:minHeight="0dp"
+        android:background="@drawable/rounded_bg_purple"
+        app:layout_constraintTop_toBottomOf="@id/your_plans_text"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/plans_create_button">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/plans_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="15dp"
+            android:layout_marginHorizontal="5dp"
+            app:layout_constraintTop_toBottomOf="@id/plans_create_button"/>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

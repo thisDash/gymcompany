@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/rounded_bg_purple"
+    android:layout_marginVertical="10dp"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/muscle_group_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Muscle Group"
+        android:textColor="@color/white"
+        android:textSize="@dimen/list_item"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/delete_muscle_group_button"
+        android:layout_width="@dimen/icon_square"
+        android:layout_height="@dimen/icon_square"
+        android:src="@drawable/minus"
+        android:tint="@color/white"
+        android:layout_marginRight="5dp"
+        app:layout_constraintTop_toTopOf="@id/muscle_group_name"
+        app:layout_constraintBottom_toBottomOf="@id/muscle_group_name"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_background"
+    android:clickable="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/current_plan_overview_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp">
+
+        <ImageView
+            android:id="@+id/current_plan_overview_cancel_button"
+            android:layout_width="@dimen/icon_square"
+            android:layout_height="@dimen/icon_square"
+            android:src="@drawable/close"
+            android:tint="@color/white"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/current_plan_overview_plan_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Plan Name"
+            android:textColor="@color/white"
+            android:textSize="@dimen/title"
+            android:gravity="center_horizontal"
+            android:lines="1"
+            android:layout_centerHorizontal="true"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/current_plan_overview_cancel_button"
+            app:layout_constraintBottom_toBottomOf="@id/current_plan_overview_cancel_button"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/current_plan_overview_header">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/current_plan_overview_progress_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Progress"
+                android:textSize="@dimen/sub_title"
+                android:textColor="@color/white"
+                android:layout_marginStart="15dp"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/current_plan_overview_progress_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_below="@id/current_plan_overview_progress_text">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/current_plan_overview_days_card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:padding="10dp"
+                    app:cardElevation="5dp"
+                    app:cardUseCompatPadding="true"
+                    app:cardCornerRadius="10dp"
+                    app:cardBackgroundColor="@android:color/transparent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/current_plan_overview_weeks_card">
+
+                    <LinearLayout
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:background="@color/dark_gray"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/current_plan_overview_current_day"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/input_text"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="/"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/input_text"/>
+
+                            <TextView
+                                android:id="@+id/current_plan_overview_number_days"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/input_text"/>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Workouts Done"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/body_text"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/current_plan_overview_weeks_card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@null"
+                    app:cardElevation="5dp"
+                    app:cardUseCompatPadding="true"
+                    app:cardCornerRadius="10dp"
+                    app:cardBackgroundColor="@android:color/transparent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/current_plan_overview_days_card">
+
+                    <LinearLayout
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:background="@color/dark_gray">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/current_plan_overview_current_week"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/input_text"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="/"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/input_text"/>
+
+                            <TextView
+                                android:id="@+id/current_plan_overview_number_weeks"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/input_text"/>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Weeks Done"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/body_text"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/current_plan_overview_workouts_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Workouts"
+                android:textSize="@dimen/sub_title"
+                android:textColor="@color/white"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_below="@id/current_plan_overview_progress_layout"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/current_plan_overview_workouts_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_below="@id/current_plan_overview_workouts_text"/>
+
+            <Button
+                android:id="@+id/current_plan_overview_start_next_workout_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="START NEXT WORKOUT"
+                android:textSize="@dimen/button_text"
+                android:textColor="@color/white"
+                android:background="@drawable/rounded_bg_purple"
+                android:layout_marginTop="15dp"
+                android:paddingHorizontal="15dp"
+                android:layout_below="@id/current_plan_overview_workouts_list"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:id="@+id/current_plan_overview_summary_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sets Per Muscle Group"
+                android:textSize="@dimen/sub_title"
+                android:textColor="@color/white"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_below="@id/current_plan_overview_start_next_workout_button" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/current_plan_overview_summary_chart_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_below="@id/current_plan_overview_summary_text">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    app:cardElevation="5dp"
+                    app:cardUseCompatPadding="true"
+                    app:cardCornerRadius="10dp"
+                    app:cardBackgroundColor="@android:color/transparent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent">
+
+                    <com.github.mikephil.charting.charts.BarChart
+                        android:id="@+id/current_plan_overview_summary_chart"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"/>
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/current_plan_overview_volume_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Volume Progression"
+                android:textSize="@dimen/sub_title"
+                android:textColor="@color/white"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_below="@id/current_plan_overview_summary_chart_layout" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/current_plan_overview_volume_chart_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_below="@id/current_plan_overview_volume_text">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@null"
+                    app:cardElevation="5dp"
+                    app:cardUseCompatPadding="true"
+                    app:cardCornerRadius="10dp"
+                    app:cardBackgroundColor="@android:color/transparent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent">
+
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:id="@+id/current_plan_overview_volume_chart"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"/>
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

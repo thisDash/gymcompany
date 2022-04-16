@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="input_text">16sp</dimen>
+    <dimen name="list_item">16sp</dimen>
+    <dimen name="title">20sp</dimen>
+    <dimen name="sub_title">14sp</dimen>
+    <dimen name="body_text">14sp</dimen>
+    <dimen name="button_text">14sp</dimen>
+    <dimen name="icon_square">25dp</dimen>
+    <dimen name="small_info">12sp</dimen>
+</resources>

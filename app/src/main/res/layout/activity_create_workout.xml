@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_background"
+    android:clickable="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/create_workout_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp">
+
+        <ImageView
+            android:id="@+id/create_workout_cancel_button"
+            android:layout_width="@dimen/icon_square"
+            android:layout_height="@dimen/icon_square"
+            android:src="@drawable/close"
+            android:tint="@color/white"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/create_workout_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create Workout"
+            android:textColor="@color/white"
+            android:textSize="@dimen/title"
+            android:gravity="center_horizontal"
+            android:lines="1"
+            android:layout_centerHorizontal="true"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/create_workout_cancel_button"
+            app:layout_constraintBottom_toBottomOf="@id/create_workout_cancel_button"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/create_workout_header">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/create_workout_workout_name_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Name:"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sub_title"
+                    android:layout_marginEnd="10dp"/>
+
+                <EditText
+                    android:id="@+id/create_workout_workout_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Workout Name"
+                    android:textColorHint="@color/white"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/input_text"
+                    android:background="@drawable/rounded_bg_gray"
+                    android:cursorVisible="true"
+                    android:textCursorDrawable="@null"
+                    android:lines="1"
+                    android:paddingVertical="10dp"
+                    android:paddingHorizontal="10dp"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/create_workout_exercises_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Exercises"
+                android:textSize="@dimen/sub_title"
+                android:textColor="@color/white"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_below="@id/create_workout_workout_name_layout"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sets x Reps @ RPE"
+                android:textSize="@dimen/sub_title"
+                android:textColor="@color/white"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/create_workout_workout_name_layout"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/create_workout_exercises_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="15dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_below="@id/create_workout_exercises_text"/>
+
+            <ImageView
+                android:id="@+id/create_workout_add_exercise_button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/add"
+                android:tint="@color/white"
+                android:background="@drawable/round_bg_purple"
+                android:padding="10dp"
+                android:layout_marginHorizontal="15dp"
+                android:layout_below="@id/create_workout_exercises_list"/>
+
+            <ImageView
+                android:id="@+id/create_workout_delete_exercise_button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/delete"
+                android:tint="@color/white"
+                android:background="@drawable/round_bg_purple"
+                android:padding="10dp"
+                android:layout_toRightOf="@id/create_workout_add_exercise_button"
+                android:layout_below="@id/create_workout_exercises_list"/>
+
+            <TextView
+                android:id="@+id/create_workout_summary_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sets Per Muscle Group"
+                android:textSize="@dimen/sub_title"
+                android:textColor="@color/white"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="15dp"
+                android:layout_below="@id/create_workout_add_exercise_button" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/create_workout_summary_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/create_workout_summary_text">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@null"
+                    app:cardElevation="5dp"
+                    app:cardUseCompatPadding="true"
+                    app:cardCornerRadius="10dp"
+                    app:cardBackgroundColor="@android:color/transparent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent">
+
+                    <com.github.mikephil.charting.charts.BarChart
+                        android:id="@+id/create_workout_summary_chart"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"/>
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Button
+                android:id="@+id/create_workout_create_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CREATE"
+                android:textSize="@dimen/button_text"
+                android:textColor="@color/white"
+                android:background="@drawable/rounded_bg_purple"
+                android:layout_margin="15dp"
+                android:paddingHorizontal="15dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/create_workout_summary_layout"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

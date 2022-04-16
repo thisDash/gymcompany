@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/dark_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".workoutSummary.WorkoutSummaryActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/workout_summary_title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Workout Summary"
+                android:textColor="@color/white"
+                android:textSize="@dimen/title"
+                android:lines="1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/workout_summary_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                app:cardElevation="5dp"
+                app:cardUseCompatPadding="true"
+                app:cardCornerRadius="10dp"
+                app:cardBackgroundColor="@android:color/transparent"
+                android:layout_below="@id/workout_summary_title_text">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:background="@color/dark_gray">
+
+                    <LinearLayout
+                        android:id="@+id/workout_summary_workout_time_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Workout time: "
+                            android:textSize="@dimen/input_text"
+                            android:textColor="@color/white"/>
+
+                        <TextView
+                            android:id="@+id/workout_summary_workout_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="XX:XX:XX"
+                            android:textSize="@dimen/input_text"
+                            android:textColor="@color/white"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/workout_summary_sets_performed_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintTop_toBottomOf="@id/workout_summary_workout_time_layout"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Number of sets done: "
+                            android:textSize="@dimen/input_text"
+                            android:textColor="@color/white"/>
+
+                        <TextView
+                            android:id="@+id/workout_summary_number_sets"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="XX"
+                            android:textSize="@dimen/input_text"
+                            android:textColor="@color/white"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/workout_summary_reps_performed_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintTop_toBottomOf="@id/workout_summary_sets_performed_layout"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Number of reps done: "
+                            android:textSize="@dimen/input_text"
+                            android:textColor="@color/white"/>
+
+                        <TextView
+                            android:id="@+id/workout_summary_number_reps"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="XX"
+                            android:textSize="@dimen/input_text"
+                            android:textColor="@color/white"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/workout_summary_weight_lifted_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintTop_toBottomOf="@id/workout_summary_reps_performed_layout"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Total weight lifted: "
+                            android:textSize="@dimen/input_text"
+                            android:textColor="@color/white"/>
+
+                        <TextView
+                            android:id="@+id/workout_summary_weight_lifted"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="XXXX"
+                            android:textSize="@dimen/input_text"
+                            android:textColor="@color/white"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/workout_summary_last_week_comparation_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintTop_toBottomOf="@id/workout_summary_weight_lifted_layout"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Volume Change from Last Week:"
+                            android:textSize="@dimen/input_text"
+                            android:textColor="@color/white"/>
+
+                        <TextView
+                            android:id="@+id/workout_summary_volume_change"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="XXXX"
+                            android:textSize="@dimen/input_text"
+                            android:textColor="@color/white"/>
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/workout_summary_exercises_log"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_below="@id/workout_summary_card"/>
+
+            <Button
+                android:id="@+id/workout_summary_home_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GO TO HOME SCREEN"
+                android:textColor="@color/white"
+                android:textSize="@dimen/input_text"
+                android:background="@drawable/rounded_bg_purple"
+                android:layout_margin="15dp"
+                android:paddingHorizontal="10dp"
+                android:layout_below="@id/workout_summary_exercises_log"
+                android:layout_centerHorizontal="true"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

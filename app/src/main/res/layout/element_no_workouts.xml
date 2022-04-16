@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/rounded_bg_purple">
+
+    <TextView
+        android:id="@+id/start_new_plan_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start a Workout"
+        android:textColor="@color/white"
+        android:textSize="@dimen/list_item"
+        android:padding="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    
+    <ImageView
+        android:layout_width="@dimen/icon_square"
+        android:layout_height="@dimen/icon_square"
+        android:src="@drawable/prompt"
+        android:tint="@color/white"
+        app:layout_constraintTop_toTopOf="@id/start_new_plan_text"
+        app:layout_constraintBottom_toBottomOf="@id/start_new_plan_text"
+        app:layout_constraintRight_toRightOf="parent"
+        android:paddingEnd="10dp"/>
+        
+
+</androidx.constraintlayout.widget.ConstraintLayout>

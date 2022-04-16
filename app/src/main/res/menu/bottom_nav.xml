@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:enabled="true"
+        android:icon="@drawable/outline_home"
+        android:title="HOME"/>
+    <item
+        android:id="@+id/nav_workouts"
+        android:enabled="true"
+        android:icon="@drawable/dumbbell"
+        android:title="WORKOUTS"/>
+    <item
+        android:id="@+id/nav_plans"
+        android:enabled="true"
+        android:icon="@drawable/plan"
+        android:title="PLANS"/>
+    <item
+        android:id="@+id/nav_max_lifts"
+        android:enabled="true"
+        android:icon="@drawable/muscle"
+        android:title="MAX LIFTS"/>
+</menu>
