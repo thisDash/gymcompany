@@ -34,6 +34,10 @@ import com.example.gymcompanion.components.WorkoutPlanLog;
 import com.example.gymcompanion.plan.CreatePlanActivity;
 import com.example.gymcompanion.plan.CurrentPlanActivity;
 import com.example.gymcompanion.workout.CreateWorkoutActivity;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -147,11 +151,19 @@ public class HomeFragment extends Fragment {
         yesButton.setOnClickListener(view -> {
             dialog.dismiss();
             auth.signOut();
-            getContext().getSharedPreferences(Constants.PREFS_NAME, MODE_PRIVATE)
-                    .edit()
-                    .putString(Constants.PREF_EMAIL, "")
-                    .putString(Constants.PREF_PASSWORD, "")
-                    .apply();
+
+            GoogleSignInAccount googleAccount = GoogleSignIn.getLastSignedInAccount(getActivity());
+
+            if(googleAccount != null) {
+                GoogleSignInOptions googleOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                        .requestIdToken(getString(R.string.default_web_client_id))
+                        .requestEmail()
+                        .build();
+
+                GoogleSignInClient googleClient = GoogleSignIn.getClient(getActivity(), googleOptions);
+                googleClient.signOut();
+                Log.d(TAG, "Logged out from google");
+            }
 
             Intent intent = new Intent(getActivity(), LoginActivity.class);
             startActivity(intent);
