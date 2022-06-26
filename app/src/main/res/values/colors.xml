@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="dark_background">#121212</color>
-    <color name="white">#FFFFFF</color>
+    <color name="white">#f2eef8</color>
+    <color name="orange">#ea5610</color>
     <color name="clickable_bg">#ED6A5A</color>
     <color name="dark_gray">#1e1e1e</color>
     <color name="light_gray">#3A3A3C</color>
