@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -44,7 +45,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText mPassword1;
     private EditText mPassword2;
     private Button mRegisterButton;
-    private Button mAlreadyHaveAccountButton;
+    private ImageView mAlreadyHaveAccountButton;
 
     private FirebaseAuth auth;
     private DatabaseReference reference;
@@ -62,11 +63,11 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void getComponents(){
         mEmail = findViewById(R.id.register_page_email);
-        mUserName = findViewById(R.id.register_page_username);
+        mUserName = findViewById(R.id.register_page_name);
         mPassword1 = findViewById(R.id.register_page_password_1);
         mPassword2 = findViewById(R.id.register_page_password_2);
         mRegisterButton = findViewById(R.id.register_page_register_button);
-        mAlreadyHaveAccountButton = findViewById(R.id.already_have_account_button);
+        mAlreadyHaveAccountButton = findViewById(R.id.create_account_back_button);
         auth = FirebaseAuth.getInstance();
     }
 
@@ -77,21 +78,11 @@ public class RegisterActivity extends AppCompatActivity {
 
     @SuppressLint("ClickableViewAccessibility")
     private void setEditTextsListeners(){
-        mEmail.setOnTouchListener((v, event) -> {
-            mEmail.setHint("");
-            return false;
-        });
-
         mEmail.setOnFocusChangeListener((v, hasFocus) -> {
             if (!hasFocus){
                 mEmail.setHint(EMAIL_HINT);
                 hideKeyboard(v);
             }
-        });
-
-        mUserName.setOnTouchListener((v, event) -> {
-            mUserName.setHint("");
-            return false;
         });
 
         mUserName.setOnFocusChangeListener((v, hasFocus) -> {
@@ -101,21 +92,11 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
-        mPassword1.setOnTouchListener((v, event) -> {
-            mPassword1.setHint("");
-            return false;
-        });
-
         mPassword1.setOnFocusChangeListener((v, hasFocus) -> {
             if (!hasFocus){
                 mPassword1.setHint(PASSWORD_1_HINT);
                 hideKeyboard(v);
             }
-        });
-
-        mPassword2.setOnTouchListener((v, event) -> {
-            mPassword2.setHint("");
-            return false;
         });
 
         mPassword2.setOnFocusChangeListener((v, hasFocus) -> {
