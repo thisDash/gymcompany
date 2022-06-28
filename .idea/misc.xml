@@ -5,6 +5,7 @@
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="app/src/main/res/drawable-v24/orange_round_background.xml" value="0.2775" />
+        <entry key="app/src/main/res/drawable-v24/rounded_bg_blue.xml" value="0.142" />
         <entry key="app/src/main/res/drawable-v24/white_pearl_round_background.xml" value="0.349" />
         <entry key="app/src/main/res/drawable/back.xml" value="0.2455" />
         <entry key="app/src/main/res/drawable/dumbbell.xml" value="0.1" />
@@ -18,10 +19,16 @@
         <entry key="app/src/main/res/drawable/plan.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_create_exercise.xml" value="0.1752786220871327" />
         <entry key="app/src/main/res/layout/activity_create_plan.xml" value="0.36041666666666666" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.36041666666666666" />
-        <entry key="app/src/main/res/layout/activity_register.xml" value="0.36041666666666666" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.209375" />
+        <entry key="app/src/main/res/layout/activity_profile.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_register.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_welcome.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_workout_log.xml" value="0.36041666666666666" />
+        <entry key="app/src/main/res/layout/element_current_plan.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/element_empty_current_plan.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2947916666666667" />
+        <entry key="app/src/main/res/layout/popup_logout.xml" value="0.2947916666666667" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/logo.xml" value="0.2775" />
       </map>
     </option>

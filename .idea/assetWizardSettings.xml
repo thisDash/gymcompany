@@ -371,7 +371,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:$USER_HOME$/Library/Android/sdk/icons/material/materialicons/arrow_back_ios/baseline_arrow_back_ios_24.xml" />
+                                      <entry key="url" value="file:$USER_HOME$/Library/Android/sdk/icons/material/materialiconsoutlined/person/outline_person_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -381,7 +381,7 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_baseline_arrow_back_ios_24" />
+                            <entry key="outputName" value="ic_profile" />
                             <entry key="sourceFile" value="$USER_HOME$/Downloads/apple-seeklogo.com.svg" />
                           </map>
                         </option>
