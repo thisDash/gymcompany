@@ -23,6 +23,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -34,6 +35,7 @@ import com.example.gymcompanion.components.WorkoutPlanLog;
 import com.example.gymcompanion.plan.CreatePlanActivity;
 import com.example.gymcompanion.plan.CurrentPlanActivity;
 import com.example.gymcompanion.workout.CreateWorkoutActivity;
+import com.facebook.AccessToken;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -73,7 +75,7 @@ public class HomeFragment extends Fragment {
     private CardView mNoPlanHistoryLayout;
     private RecyclerView mWorkoutHistory;
     private RecyclerView mPlanHistory;
-    private ImageView mHomeMenu;
+    private ConstraintLayout profileButton;
 
     private DatabaseReference reference;
     private FirebaseAuth auth;
@@ -124,7 +126,7 @@ public class HomeFragment extends Fragment {
         mWorkoutHistory = mView.findViewById(R.id.home_workout_history_list);
         mPlanExistsLayout = mView.findViewById(R.id.home_current_plan_card);
         mNoPlanExistsLayout = mView.findViewById(R.id.home_no_current_plan_card);
-        mHomeMenu = mView.findViewById(R.id.home_username_logout);
+        profileButton = mView.findViewById(R.id.home_profile_button);
         mNoWorkoutHistoryLayout = mView.findViewById(R.id.home_no_workout_history_card);
         mPlanHistory = mView.findViewById(R.id.home_plan_history_list);
         mNoPlanHistoryLayout = mView.findViewById(R.id.home_no_plan_history_card);
@@ -133,44 +135,12 @@ public class HomeFragment extends Fragment {
     private void setButtonListeners(){
         mCreateWorkoutButton.setOnClickListener(v -> goToCreateWorkoutPage());
         mCreatePlanButton.setOnClickListener(v -> goToCreatePlanPage());
-        mHomeMenu.setOnClickListener(v -> openLogoutPopup());
+        profileButton.setOnClickListener(v -> goToProfilePage());
     }
 
-    private void openLogoutPopup(){
-        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(getContext());
-
-        View popupView = getLayoutInflater().inflate(R.layout.popup_logout, null);
-        Button yesButton = popupView.findViewById(R.id.popup_logout_yes_button);
-        Button noButton = popupView.findViewById(R.id.popup_logout_no_button);
-
-        dialogBuilder.setView(popupView);
-        Dialog dialog = dialogBuilder.create();
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        dialog.show();
-
-        yesButton.setOnClickListener(view -> {
-            dialog.dismiss();
-            auth.signOut();
-
-            GoogleSignInAccount googleAccount = GoogleSignIn.getLastSignedInAccount(getActivity());
-
-            if(googleAccount != null) {
-                GoogleSignInOptions googleOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                        .requestIdToken(getString(R.string.default_web_client_id))
-                        .requestEmail()
-                        .build();
-
-                GoogleSignInClient googleClient = GoogleSignIn.getClient(getActivity(), googleOptions);
-                googleClient.signOut();
-                Log.d(TAG, "Logged out from google");
-            }
-
-            Intent intent = new Intent(getActivity(), LoginActivity.class);
-            startActivity(intent);
-            getActivity().finish();
-        });
-
-        noButton.setOnClickListener(view -> dialog.dismiss());
+    private void goToProfilePage(){
+        Intent intent = new Intent(getActivity(), ProfileActivity.class);
+        startActivity(intent);
     }
 
     private void getPlanComponents(){
