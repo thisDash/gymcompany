@@ -3,43 +3,43 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/rounded_bg_dark">
+    android:background="@drawable/rounded_bg_blue">
 
     <TextView
         android:id="@+id/popup_cancel_workout_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Are you sure you want to logout?"
-        android:textColor="@color/white"
-        android:textSize="@dimen/input_text"
-        android:gravity="center_horizontal"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"/>
+        android:layout_marginTop="15dp"
+        android:gravity="center_horizontal"
+        android:textColor="@color/white"
+        android:text="Are you sure you want to logout?"
+        android:textSize="@dimen/input_text" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/popup_cancel_workout_text"
-        android:orientation="horizontal"
-        android:layout_centerHorizontal="true">
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/popup_logout_yes_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:background="@drawable/white_pearl_round_background"
             android:text="YES"
-            android:textColor="@color/white"
-            android:background="@drawable/rounded_bg_purple"
-            android:layout_margin="15dp" />
+            android:textColor="@color/orange" />
 
         <Button
             android:id="@+id/popup_logout_no_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:background="@drawable/white_pearl_round_background"
             android:text="NO"
-            android:textColor="@color/white"
-            android:background="@drawable/rounded_bg_purple"
-            android:layout_margin="15dp" />
+            android:textColor="@color/orange" />
 
     </LinearLayout>
 

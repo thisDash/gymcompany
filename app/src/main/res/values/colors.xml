@@ -3,11 +3,12 @@
     <color name="dark_background">#121212</color>
     <color name="white">#f2eef8</color>
     <color name="orange">#ea5610</color>
+    <color name="blue">#1b1e3e</color>
     <color name="clickable_bg">#ED6A5A</color>
     <color name="dark_gray">#1e1e1e</color>
     <color name="light_gray">#3A3A3C</color>
     <color name="very_light_gray">#5F5F5F</color>
-    <color name="blue">#33C1D7</color>
+
     <color name="brown">#A1897F</color>
     <color name="purple">#9965f4</color>
 </resources>
